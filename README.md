@@ -1,1 +1,1 @@
-# homework3
+HW 3 for HPC class
