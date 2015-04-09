@@ -27,7 +27,7 @@ solved4: omp_solved4.c
 
 
 
-omp_solved5: omp_solved5.c
+solved5: omp_solved5.c
 	gcc -fopenmp omp_solved5.c -o solved5
 
 5: solved5
