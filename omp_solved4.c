@@ -10,8 +10,11 @@
 #include <stdlib.h>
 #define N 1048
 
+
 int main (int argc, char *argv[]) 
 {
+  printf("\n\nOutput for mpi_solved4.\n\n");
+
   int nthreads, tid, i, j;
   double a[N*N];
 
@@ -39,6 +42,8 @@ int main (int argc, char *argv[])
     printf("Thread %d done. Last element= %f\n",tid, a[ N*N-1 ]);
 
   }  /* All threads join master thread and disband */
+  
+  printf("\n\n\n");
   return 0;
 }
 

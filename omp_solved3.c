@@ -10,8 +10,11 @@
 #include <stdlib.h>
 #define N     50
 
+
 int main (int argc, char *argv[]) 
 {
+  printf("\n\nOutput for 3.\n\n");
+
   int i, nthreads, tid, section;
   float a[N], b[N], c[N];
   void print_results(float array[N], int tid, int section);
@@ -63,6 +66,8 @@ int main (int argc, char *argv[])
 
 
   }  /* end of parallel section */
+  printf("\n\n\n");
+
   return 0;
 }
 
@@ -78,7 +83,7 @@ void print_results(float array[N], int tid, int section)
   {
     printf("\nThread %d did section %d. The results are:\n", tid, section);
     for (i=0; i<N; i++) {
-      printf("%e  ",array[i]);
+      //printf("%e  ",array[i]);
       j++;
       if (j == 6) {
 	printf("\n");
@@ -96,3 +101,4 @@ void print_results(float array[N], int tid, int section)
 
 // removed barrier from inside print_results since it was causing a hang.
 // Then I moved the print done and synchronized inside the critical region.
+// I also suppressed printing the big array.

@@ -13,8 +13,11 @@
 #define PI 3.1415926535
 #define DELTA .01415926535
 
+
 int main (int argc, char *argv[]) 
 {
+  printf("\n\nOutput for mpi_solved5.\n\n");
+
   int nthreads, tid, i;
   float a[N], b[N];
   omp_lock_t locka, lockb;
@@ -71,6 +74,9 @@ int main (int argc, char *argv[])
       }
     }  /* end of sections */
   }  /* end of parallel region */
+
+
+  printf("\n\n\n");
   return 0;
   
 }

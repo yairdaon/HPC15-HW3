@@ -11,12 +11,14 @@
 
 int main (int argc, char *argv[]) 
 {
+  printf("\n\nOutput for 2.\n\n");
+
   int nthreads, i, tid;
   int n = 50;
   float total;
 
   /*** Spawn parallel region ***/
-#pragma omp parallel 
+#pragma omp parallel private(tid)
   {
     /* Obtain thread number */
     tid = omp_get_thread_num();
@@ -37,12 +39,13 @@ int main (int argc, char *argv[])
     }
 
 #pragma omp barrier
-  printf ("done! Total = %e\n",total);  
-  printf ("Should be   = %e\n",  (n-1.0)*n/2.0       );
+    printf ("Thread %d done! Total = %e, Should be   = %e\n",tid, total,  (n-1.0)*n/2.0  );  
   
 
   } /*** end parallel ***/
 
+  printf("\n\n\n");
+  return 0;
 }
 // added a reduce command and added barrier before print statement
 // for some reason i can't get the thread ids right...

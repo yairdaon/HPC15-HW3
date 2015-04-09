@@ -1,6 +1,13 @@
 #COMPILER = gcc -fopenmp
 #EXECUTABLES = omp_solved2 omp_solved3 omp_solved4 omp_solved5 omp_solved6
 
+all:
+	make 2
+	make 3
+	make 4
+	make 5
+	make 6
+
 solved2: omp_solved2.c
 	gcc  -fopenmp omp_solved2.c -o solved2
 
@@ -35,10 +42,10 @@ solved5: omp_solved5.c
 
 
 
-solved6: solved6.c
+solved6: omp_solved6.c
 	gcc -fopenmp omp_solved6.c -o solved6
 
-6: solved
+6: solved6
 	./solved6
 
 
