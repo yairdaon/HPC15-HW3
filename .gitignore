@@ -1,2 +1,3 @@
-omp_bug*.*
+omp_bug?.c
 *.pdf
+solved?

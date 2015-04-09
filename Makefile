@@ -44,5 +44,9 @@ solved6: solved6.c
 
 
 clean:
-	rm *~
+	rm -rvf *~
 	rm -rvf solved?
+	clear
+
+push:
+	git push https://github.com/yairdaon/HPC15-HW3.git
