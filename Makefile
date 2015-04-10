@@ -1,12 +1,31 @@
-#COMPILER = gcc -fopenmp
-#EXECUTABLES = omp_solved2 omp_solved3 omp_solved4 omp_solved5 omp_solved6
-
 all:
 	make 2
 	make 3
 	make 4
 	make 5
 	make 6
+	make gs
+
+
+clean:
+	rm -rvf *~
+	rm -rvf solved?
+	rm -rvf gs-omp gs-no-omp min-omp
+	clear
+
+push:
+	git push https://github.com/yairdaon/HPC15-HW3.git
+
+
+
+# GS with OMP
+gs-omp: gs-omp.c
+	gcc -fopenmp -Wall gs-omp.c -lm -o gs-omp	
+
+gs: gs-omp
+	./gs-omp 500
+
+
 
 solved2: omp_solved2.c
 	gcc  -fopenmp omp_solved2.c -o solved2
@@ -48,12 +67,3 @@ solved6: omp_solved6.c
 6: solved6
 	./solved6
 
-
-
-clean:
-	rm -rvf *~
-	rm -rvf solved?
-	clear
-
-push:
-	git push https://github.com/yairdaon/HPC15-HW3.git
