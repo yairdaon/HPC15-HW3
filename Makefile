@@ -5,12 +5,13 @@ all:
 	make 5
 	make 6
 	make gs
+	make jac
 
 
 clean:
 	rm -rvf *~
 	rm -rvf solved?
-	rm -rvf gs-omp gs-no-omp min-omp jacobi-omp
+	rm -rvf gs-omp jacobi-omp
 	clear
 
 push:
@@ -20,7 +21,7 @@ push:
 jacobi-omp:jacobi-omp.c
 	gcc -fopenmp -Wall jacobi-omp.c -lm -o jacobi-omp
 jac: jacobi-omp
-	./jacobi-omp
+	./jacobi-omp 500
 
 
 # GS with OMP

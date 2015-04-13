@@ -14,7 +14,7 @@ int main (int argc, char **argv)
 {
  
 
-  int n = 500;//atoi(argv[1]);
+  int n = atoi(argv[1]);
   int  jac, t;
   clock_t start, diff;
    
